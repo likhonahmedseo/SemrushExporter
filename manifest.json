@@ -1,0 +1,18 @@
+{
+  "manifest_version": 3,
+  "name": "Table to CSV Exporter",
+  "version": "2.0.0",
+  "author": "Masudur Rashid",
+  "homepage_url": "https://www.linkedin.com/in/bloggermasud/",
+  "description": "Export any table on a web page to CSV, including every page of a paginated table.",
+  "permissions": ["activeTab", "scripting", "storage", "unlimitedStorage"],
+  "icons": { "16": "icon16.png", "32": "icon32.png", "48": "icon48.png", "128": "icon128.png" },
+  "action": {
+    "default_title": "Table to CSV Exporter",
+    "default_popup": "popup.html",
+    "default_icon": { "16": "icon16.png", "32": "icon32.png", "48": "icon48.png", "128": "icon128.png" }
+  },
+  "commands": {
+    "_execute_action": { "suggested_key": { "default": "Alt+Shift+E" } }
+  }
+}

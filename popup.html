@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <header>
+    <div>
+      <h1>Table to CSV Exporter</h1>
+      <div id="ctx" class="muted">Scanning…</div>
+    </div>
+    <button id="rescan" class="ghost" title="Rescan page">↻</button>
+  </header>
+
+  <div id="job" class="job hidden">
+    <span id="jobMsg"></span>
+    <button id="stopJob" class="danger small">Stop</button>
+  </div>
+
+  <section>
+    <div class="row-head">
+      <h2>Tables on this page</h2>
+      <button id="exportEverything" class="ghost small">All tables → CSV</button>
+    </div>
+    <div id="list"><div class="muted">Scanning…</div></div>
+  </section>
+
+  <details>
+    <summary>Settings</summary>
+    <label class="opt"><span>Max pages (All pages)</span><input id="maxPages" type="number" min="1" value="50"></label>
+    <label class="opt"><span>Delay between pages (ms)</span><input id="delay" type="number" min="0" step="250" value="1500"></label>
+    <label class="opt chk"><input id="cleanNumbers" type="checkbox" checked><span>Plain numbers (40,500 → 40500, 1.4B → 1400000000)</span></label>
+    <label class="opt chk"><input id="includeLinks" type="checkbox" checked><span>Add URL columns for linked cells</span></label>
+    <label class="opt chk"><input id="alsoBasket" type="checkbox"><span>Also add "All pages" results to the basket</span></label>
+  </details>
+
+  <section class="basket">
+    <div class="row-head">
+      <h2>Basket <span id="basketCount" class="pill">0</span></h2>
+      <div>
+        <button id="basketDl" class="small">Download</button>
+        <button id="basketClear" class="ghost small">Clear</button>
+      </div>
+    </div>
+    <div class="muted">Collect rows from many reports or keywords into one CSV. Columns Report, Query, Database and Table record where each row came from.</div>
+  </section>
+
+  <footer>Developed by <a href="https://www.linkedin.com/in/bloggermasud/" target="_blank" rel="noopener">Masudur Rashid</a></footer>
+
+  <div id="toast" class="toast hidden"></div>
+  <script src="popup.js"></script>
+</body>
+</html>
